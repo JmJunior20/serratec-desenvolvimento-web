@@ -1,0 +1,8 @@
+div.meu-header {
+    padding: 20px;
+    text-align: center;
+    background: grey;
+    font-size: 25px;
+    font-weight: 500;
+    color: #fff;
+}
