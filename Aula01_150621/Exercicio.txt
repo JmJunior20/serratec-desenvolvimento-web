@@ -1,0 +1,14 @@
+1° Criar um array de pessoas com 5 pessoas
+2° Cada pessoa deve ter id, nome, idade.
+
+Objetivos:
+
+3° Printar na tela somente os nomes das pessoas.
+4° Filtrar somente as pessoas que tenham idade maior que 18.
+5° Pegar de dentro do array a pessoa que tenha id igual a 3.
+
+6° Deletar do array a pessoa que tenha id igual a 2.
+
+7° Alterar dentro do array a pessoa que tenha id igual a 1.
+
+8° Retornar um novo array somente com id e nome das pessoas;
