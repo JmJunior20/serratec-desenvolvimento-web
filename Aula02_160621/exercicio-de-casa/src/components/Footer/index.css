@@ -1,0 +1,9 @@
+div.meu-footer {
+    padding: 20px;
+    background: black;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    color: white;
+}
