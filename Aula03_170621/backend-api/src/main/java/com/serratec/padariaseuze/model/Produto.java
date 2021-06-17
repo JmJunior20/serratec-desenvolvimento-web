@@ -7,17 +7,9 @@ public class Produto {
     private Integer quantidade;
     private Double valor;
     private String urlImagem;
-
-
-    public Produto() {
-    }       
-
-    public Produto(String nome, Integer quantidade, Double valor, String urlImagem) {
-        this.nome = nome;
-        this.quantidade = quantidade;
-        this.valor = valor;
-        this.urlImagem = urlImagem;
-    }  
+    
+    //#region construtores
+    public Produto() {}
 
     public Produto(Long id, String nome, Integer quantidade, Double valor, String urlImagem) {
         this.id = id;
@@ -25,9 +17,17 @@ public class Produto {
         this.quantidade = quantidade;
         this.valor = valor;
         this.urlImagem = urlImagem;
+    }   
+
+    //#endregion
+    public Produto(String nome, Integer quantidade, Double valor, String urlImagem) {
+        this.nome = nome;
+        this.quantidade = quantidade;
+        this.valor = valor;
+        this.urlImagem = urlImagem;
     }
 
-    //#region getter e setter
+    //#region getter e Setter
     public Long getId() {
         return id;
     }
@@ -47,6 +47,7 @@ public class Produto {
     public Integer getQuantidade() {
         return quantidade;
     }
+
     public void setQuantidade(Integer quantidade) {
         this.quantidade = quantidade;
     }
@@ -65,7 +66,7 @@ public class Produto {
 
     public void setUrlImagem(String urlImagem) {
         this.urlImagem = urlImagem;
-    } 
-    
+    }
     //#endregion
+    
 }

@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,13 +24,15 @@ public class ProdutoController {
     ProdutoService servicoProduto;
 
     @GetMapping
-    public List<Produto> obterTodos() {
+    public List<Produto> obterTodos(){
         return servicoProduto.obterTodos();
     }
 
     @PostMapping
-    public ResponseEntity<Produto> adicionar(Produto produto) {        
+    public ResponseEntity<Produto> adicionar(@RequestBody Produto produto){
         var novoProduto = servicoProduto.adicionar(produto);
         return new ResponseEntity<>(novoProduto, HttpStatus.CREATED);
-    } 
+    }
+    
 }
+

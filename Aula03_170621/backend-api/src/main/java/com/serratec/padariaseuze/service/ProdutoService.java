@@ -3,7 +3,7 @@ package com.serratec.padariaseuze.service;
 import java.util.List;
 
 import com.serratec.padariaseuze.model.Produto;
-import com.serratec.padariaseuze.repository.ProdutoRepositoy;
+import com.serratec.padariaseuze.repository.ProdutoRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,13 +12,13 @@ import org.springframework.stereotype.Service;
 public class ProdutoService {
     
     @Autowired
-    ProdutoRepositoy repositorioProduto;
+    ProdutoRepository repositorioProduto;
 
-    public List<Produto> obterTodos() {
+    public List<Produto> obterTodos(){
         return this.repositorioProduto.obterTodos();
     }
 
-    public Produto adicionar(Produto produto) {
+    public Produto adicionar(Produto produto){
         return this.repositorioProduto.adicionar(produto);
     }
 }

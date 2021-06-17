@@ -8,16 +8,16 @@ import com.serratec.padariaseuze.model.Produto;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class ProdutoRepositoy {
+public class ProdutoRepository  {
     
     private ArrayList<Produto> produtos = new ArrayList<Produto>();
     private Long ultimoId = 0l;
 
-    public List<Produto> obterTodos() {
+    public List<Produto> obterTodos(){
         return this.produtos;
     }
 
-    public Produto adicionar(Produto produto) {
+    public Produto adicionar(Produto produto){
         this.ultimoId++;
         produto.setId(ultimoId);
 
