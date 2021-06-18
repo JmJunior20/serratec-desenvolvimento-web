@@ -15,6 +15,9 @@ export default class Principal extends React.Component {
     //Aqui podemos ter muitas propriedades.
     state = {
         produtos: [],
+        pessoa: {
+            cliente: {}
+        }
     }
 
     //Essa função é executada quando a pagina é carregada.
@@ -33,19 +36,19 @@ export default class Principal extends React.Component {
 
     // Vamos criar funções assim
     // Versão 02
-    obterProdutos = () => {
-        api.get("/api/produtos")
-            .then(resposta => {
-             this.setState({produtos: resposta.data.map(obj => new Produto(obj)) });
-        })
-         .catch(error => console.log(error))
-    }
+    // obterProdutos = () => {
+    //     api.get("/api/produtos")
+    //         .then(resposta => {
+    //          this.setState({produtos: resposta.data.map(obj => new Produto(obj)) });
+    //     })
+    //      .catch(error => console.log(error))
+    // }
 
     //Versão 03
-    // obterProdutos = async () => {
-    //     const resposta = await api.get("/api/produtos");
-    //     this.setState({ produtos: resposta.data.map(obj => new Produto(obj)) });
-    // }
+    obterProdutos = async () => {
+        const resposta = await api.get("/api/produtos");
+        this.setState({ produtos: resposta.data.map(obj => new Produto(obj)) });
+    }
 
     render() {
 
@@ -55,17 +58,16 @@ export default class Principal extends React.Component {
         // const { cliente } = this.state.pessoa;
 
         return (
-            <div className="container-produtos">           
+            <div className="container-produtos">
                 {produtos.map(produto => (
                     <div className="produtos" key={ produto.id }>
-                        <p><strong>Id:</strong> { produto.id }</p>
-                        <p><strong>Nome:</strong> { produto.nome }</p>
-                        <p><strong>Valor:</strong> { produto.valor }</p>
-                        <Link to={ `/detalhes/${produto.id}` } className="btn-detalhes">Detalhes</Link>
+                        <p><strong>Id:</strong> { produto.id } </p>
+                        <p><strong>Nome:</strong> { produto.nome } </p>
+                        <p><strong>Valor</strong> { produto.valor } </p>
+                        <Link to={`/detalhes/${produto.id}`} className="btn-detalhes">Detalhes</Link>
                     </div>
-                ))}               
-
-            </div>            
+                ))}
+            </div>           
         );
     }
 }

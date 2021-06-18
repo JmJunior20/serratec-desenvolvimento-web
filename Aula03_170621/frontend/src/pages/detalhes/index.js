@@ -1,18 +1,24 @@
-import React from 'react';
-import './index.css';
+import React from "react";
+import "./index.css";
 
-export default class Detalhes extends React.component {
+export default class Detalhes extends React.Component {
 
-    statec = {
+    state = {
         produto:{}
+    };
+
+    componentDidMount(){
+        // Aqui vamos pegar o id que vem na rota.
+        // consultar esse id na api
+        // Do retorno pular o detalhes.
     }
 
-    render() {
-        const {produto} = this.state;
+    render(){
+        const { produto } = this.state;
 
         return (
             <div className="detalhes-produto">
-                <h2>{produto.nome}</h2>
+                <h2>{produto.name}</h2>
                 <h3>{produto.quantidade}</h3>
                 <h3>{produto.valor}</h3>
                 <p>
