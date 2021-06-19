@@ -61,10 +61,11 @@ export default class Principal extends React.Component {
             <div className="container-produtos">
                 {produtos.map(produto => (
                     <div className="produtos" key={ produto.id }>
-                        <p><strong>Id:</strong> { produto.id } </p>
-                        <p><strong>Nome:</strong> { produto.nome } </p>
-                        <p><strong>Valor</strong> { produto.valor } </p>
-                        <Link to={`/detalhes/${produto.id}`} className="btn-detalhes">Detalhes</Link>
+                        <Link to={`/detalhes/${produto.id}`}>
+                            <p><strong>Id:</strong> { produto.id } </p>
+                            <p><strong>Nome:</strong> { produto.nome } </p>
+                            <p><strong>Valor</strong> { produto.valor } </p>
+                        </Link>
                     </div>
                 ))}
             </div>           

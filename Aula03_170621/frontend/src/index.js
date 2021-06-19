@@ -2,11 +2,5 @@ import React from 'react';
 import reactDom from 'react-dom';
 import App from './App';
 
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
-
+/** Aqui estamos renderizando nosso primeiro componente quando a aplicação esta abrindo */
 reactDom.render(<App/>, document.getElementById("root"));
