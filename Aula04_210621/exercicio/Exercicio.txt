@@ -1,0 +1,14 @@
+Exercicio de fixação
+
+Criar um novo sistema onde tenha uma pagina main e dentro 
+da pagina, tenha 1 componente que chame outro componente.
+
+O primeiro componente deve passar uma mensagem por parametro para o segundo 
+componente mostrar na tela.
+
+No Main replicar a mesma ideia do contador que o professor fez de exemplo.
+Ao clicar no botão de aumentar, quero que o contador aumente.
+Ao clicar no botão de diminuir, quero que o contador diminua.
+
+Criar um componente para mostrar um contador dinamico.
+Ele vai receber o valor do contador e mostrar na tela.
