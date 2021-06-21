@@ -11,6 +11,7 @@ export default class CadastroProduto extends React.Component {
     state = {
         produto: new Produto()
     }
+        
 
     cadastrarProduto = async (e) =>{
         e.preventDefault();
@@ -28,7 +29,7 @@ export default class CadastroProduto extends React.Component {
             urlImagem: e.target[3].value 
         });
 
-        this.setState({produto});
+        this.setState({produto});        
         
         try {
             const resposta = await api.post("/api/produtos", produto);
@@ -38,11 +39,17 @@ export default class CadastroProduto extends React.Component {
             // Aqui limpei os campos
             this.setState({produto: new Produto()});
 
+            e.target[0].value = "";
+            e.target[1].value = "";
+            e.target[2].value = "";
+            e.target[3].value = "";
+
         } catch (error) {
             console.log(error);
             alert("Ops, não foi possivel cadastrar este produto.");
         }
-    }
+                
+    }    
 
 
     render(){
@@ -71,7 +78,7 @@ export default class CadastroProduto extends React.Component {
 
 
                     <div className="grupo">
-                        <input type="submit" value="Cadastrar"/> 
+                        <input type="submit" value="Cadastrar" /> 
                         <input type="reset" value="Limpar"/>
                     </div>
 
