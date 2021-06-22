@@ -1,1 +1,1 @@
-// Vários componentes de tabelas.
+// Varios componentes de tabelas.
