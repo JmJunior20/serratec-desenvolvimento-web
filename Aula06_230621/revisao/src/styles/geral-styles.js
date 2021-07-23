@@ -2,13 +2,17 @@ import styled from "styled-components";
 
 export const NavBar = styled.ul`
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    margin:0;
+    padding:0;
     overflow: hidden;
-    background-color: #333;
+    background-color:#333;
 
     li {
         float: left;
+
+        :last-child{
+            float:right;
+        }
     }
 
     li a {
@@ -16,19 +20,19 @@ export const NavBar = styled.ul`
         color: #fff;
         padding: 15px 17px;
         text-decoration: none;
-        text-align: center;
+        text-align:center;
 
-        :hover {
+        :hover{
             background-color: #111;
         }
-    }
 
+    }   
 `;
 
 export const DivPersonalizada = styled.div`
     width: ${props => props.width};
     border: ${props => props.border};
-    padding: 25px;
+    padding: 25px; 
     margin: ${props => props.margin};
-    margin-top: ${props => props.marginTop};
+    margin-top: ${props => props.marginTop}
 `;

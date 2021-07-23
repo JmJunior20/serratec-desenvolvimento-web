@@ -9,10 +9,32 @@ function logar(email, senha){
 }
 
 function obterTodos(){
+    return new Promise((resolve, reject) => {
+        return api.get('/api/usuarios')
+        .then(response => resolve(response))
+        .catch(error => reject(error))
+    });
+}
 
+function atualizar(usuario){
+    return new Promise((resolve, reject) => {
+        return api.put(`/api/usuarios/${usuario.id}`, usuario)
+        .then(response => resolve(response))
+        .catch(error => reject(error))
+    });
+}
+
+function deletar(id){
+    return new Promise((resolve, reject) => {
+        return api.delete(`/api/usuarios/${id}`)
+        .then(response => resolve(response))
+        .catch(error => reject(error))
+    });
 }
 
 export default {
     logar,
-    obterTodos
+    obterTodos,
+    atualizar,
+    deletar
 }
